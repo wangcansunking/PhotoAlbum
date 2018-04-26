@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Koa = require('koa');
+const colors = require('colors');
 const Logger = require('koa-logger');
 const Body = require('koa-body');
 const Router = require('koa-router');
@@ -22,7 +23,9 @@ addMiddleware();
 
 app.listen(3000);
 
-console.log('Server starts on 3000');
+console.log(colors.rainbow('---------------------'));
+console.log(colors.rainbow('Server starts on 3000'));
+console.log(colors.rainbow('---------------------'));
 
 function useRouter() {
     const restFiles = fs.existsSync(REST_FOLDER) && fs.readdirSync(REST_FOLDER);
